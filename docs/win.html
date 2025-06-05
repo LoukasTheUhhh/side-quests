@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS Loss..</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just some Rock Paper Scissors.">
+    <meta name="keywords" content="Rock, Paper, Scissors">
+    <style>
+      #PA2 {
+        width: 100px;
+        height: 30px;
+        color: white;
+        background-color: green;
+        font: 15px monospace;
+        border: 1px solid darkgreen;
+      }
+      h1 {
+        font-size: 25px;
+        font-family: monospace;
+        color: white;
+      }
+      body {
+        background-color: black;
+        color: white;
+      }
+      p {
+        color: white;
+        font: 16px monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Yay!You won!</h1>
+    <p id="yp2"></p>
+    <p id="bp2"></p>
+    <button id="PA2" onclick="location.replace('./index.html')">Play again?</button>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Retrieve picks from localStorage
+        const selector = localStorage.getItem('selector');
+        const Rselect = localStorage.getItem('Rselect');
+        document.getElementById("yp2").textContent = "Your Pick: " + (selector || "Unknown");
+        document.getElementById("bp2").textContent = "Bot's Pick: " + (Rselect || "Unknown");
+      });
+    </script>
+  </body>
+</html>
