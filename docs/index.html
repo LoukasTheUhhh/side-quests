@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Just some Rock Paper Scissors.">
+    <meta name="keywords" content="Rock, Paper, Scissors">
+    <style>
+      #top {
+        position: sticky;
+        color: white;
+        background-color: black;
+        top: 0;
+      }
+      h1 {
+        font-size: 25px;
+      }
+    </style>
+    <script type="module">
+      export let selected = "";
+      export let txt = null;
+      export let id = null;
+      export let Rselect = "";
+      export function show(text, documentid) {
+        txt = text;
+        id = documentid;
+        document.getElementById(id).innerHTML = txt;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="top">
+      <h1>🪨Rock🪨📃Paper📃✂️Scissors✂️</h1>
+    </div>
+    <div id="rock">
+      <img src='https://i.postimg.cc/7bkHfTh7/rock-emoji-2041x2048-28yo01im.png' border='0' alt='rock image' onclick=
+        '
+       import {selected, txt, id, show, Rselect} from "index.html";
+       selected = "rock";
+       Rselect = null;
+       setInterval(() => {
+       if (selected == "rock" || selected == "paper" || selected == "scissors") {
+         Rselect = Math.floor(Math.random() * 3) + 1;
+         if (Rselect == 1) {
+           Rselect = "rock";
+         } else if (Rselect == 2) {
+           Rselect = "paper";
+         } else if (Rselect == 3) {
+           Rselect = "scissors";
+         }
+       }
+        if (Rselect == "rock" && selected == "scissors" || Rselect == "paper" && selected == "rock" || Rselect == "scissors" && selected == "paper") {
+          location.replace("./lose.html");
+        } else if (Rselect == "rock" && selected == "paper" || Rselect == "paper" && selected == "scissors" || Rselect == "scissors" && selected = "rock") {
+        location.replace("./win.html");
+        }
+       }, 1000);            
+          '
+      <h2>Rock</h2>
+    </div>
+    <div id="paper">
+      <img src='https://i.postimg.cc/G4Vrr464/pngtree-paper-icon-png-image-6294297.png' border='0' alt='paper image' onclick='
+       import {selected, txt, id, show, Rselect} from "index.html";
+       selected = "paper";
+       Rselect = null;
+       setInterval(() => {
+       if (selected == "rock" || selected == "paper" || selected == "scissors") {
+         Rselect = Math.floor(Math.random() * 3) + 1;
+         if (Rselect == 1) {
+           Rselect = "rock";
+         } else if (Rselect == 2) {
+           Rselect = "paper";
+         } else if (Rselect == 3) {
+           Rselect = "scissors";
+         }
+       }
+       if (Rselect == "rock" && selected == "scissors" || Rselect == "paper" && selected == "rock" || Rselect == "scissors" && selected == "paper") {
+         location.replace("./lose.html");
+        } else if (Rselect == "rock" && selected == "paper" || Rselect == "paper" && selected == "scissors" || Rselect == "scissors" && selected = "rock") {
+         location.replace("./win.html");
+        }
+       }, 1000);              
+          '>
+      <h2>Paper</h2>
+    </div>
+    <div>
+      <img src='https://i.postimg.cc/JtxL069V/10363577.png' border='0' alt='scissors image' onclick='
+      import {selected, txt, id, show, Rselect} from "index.html";
+       selected = "scissors";
+       Rselect = null;
+       setInterval(() => {
+       if (selected == "rock" || selected == "paper" || selected == "scissors") {
+         Rselect = Math.floor(Math.random() * 3) + 1;
+         if (Rselect == 1) {
+           Rselect = "rock";
+         } else if (Rselect == 2) {
+           Rselect = "paper";
+         } else if (Rselect == 3) {
+           Rselect = "scissors";
+         }
+       }
+        if (Rselect == "rock" && selected == "scissors" || Rselect == "paper" && selected == "rock" || Rselect == "scissors" && selected == "paper") {
+          location.replace("./lose.html");
+        } else if (Rselect == "rock" && selected == "paper" || Rselect == "paper" && selected == "scissors" || Rselect == "scissors" && selected = "rock") {
+        location.replace("./win.html");
+        }
+       }, 1000);               
+          '>
+      <h2>Scissors</h2>
+    </div>
+  </body>
+</html>
