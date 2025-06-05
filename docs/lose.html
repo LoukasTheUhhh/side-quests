@@ -8,35 +8,40 @@
     <meta name="keywords" content="Rock, Paper, Scissors">
     <style>
       #PA {
-        width: 50px;
-        height: 20px;
+        width: 100px;
+        height: 30px;
         color: white;
         background-color: green;
         font: 15px monospace;
-        border: 1px medium darkgreen;
+        border: 1px solid darkgreen;
       }
       h1 {
-        font: monospace 25px;
+        font-size: 25px;
+        font-family: monospace;
         color: white;
       }
       body {
-        color: black;
+        background-color: black;
+        color: white;
       }
       p {
         color: white;
-        font: monospace 10px;
+        font: 16px monospace;
       }
     </style>
-    <script>
-      import {selector, Rselect, show} from "./index.html";
-      document.getElementById("yp").innerHTML = "Your Pick:" + selector;
-      document.getElementById("bp").innerHTML = "Bot's Pick:" + Rselect;
-    </script>
   </head>
   <body>
-    <h1>Sorry,you lost...</h1>
+    <h1>Sorry, you lost...</h1>
     <p id="yp"></p>
     <p id="bp"></p>
     <button id="PA" onclick="location.replace('./index.html')">Play again?</button>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const selector = localStorage.getItem('selector');
+        const Rselect = localStorage.getItem('Rselect');
+        document.getElementById("yp").textContent = "Your Pick: " + (selector || "Unknown");
+        document.getElementById("bp").textContent = "Bot's Pick: " + (Rselect || "Unknown");
+      });
+    </script>
   </body>
 </html>
